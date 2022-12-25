@@ -1,13 +1,14 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "./page.module.css";
+import Nav from "./components/Nav";
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-     <h1 className='text-center text-yellow-500'>haalsas</h1>
+    <main>
+      <h1 className="text-center text-yellow-500">haalsas</h1>
     </main>
-  )
+  );
 }
