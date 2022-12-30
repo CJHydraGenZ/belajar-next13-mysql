@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useSWR, { preload } from "swr";
+import useSWR from "swr";
 async function getAllData() {
   const res = await fetch("/api/user");
   return res.json();

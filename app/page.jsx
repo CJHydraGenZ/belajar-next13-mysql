@@ -22,7 +22,7 @@ export default function Home() {
   }
   return (
     <main>
-      <h1>{session.user.email}</h1>
+      <h1>{session?.user?.email}</h1>
       <button onClick={() => signOut()}>Sign out</button>
       <h1 className="text-center text-yellow-500">haalsas</h1>
     </main>
