@@ -2,41 +2,41 @@ import prisma from "./prisma";
 
 
 export const getAllUser = async () => {
-  const user = await prisma.user.findMany({})
-  return user
+  const xuser = await prisma.xuser.findMany({})
+  return xuser
 }
 
 export const getUser = async (id) => {
-  const user = await prisma.user.findUnique({
+  const xuser = await prisma.xuser.findUnique({
     where: { id }
   })
-  return user
+  return xuser
 }
 
 
 export const createUser = async (email, nama, tangalLahir) => {
-  const user = await prisma.user.create({
+  const xuser = await prisma.xuser.create({
     data: {
       email,
       nama,
       tangalLahir
     }
   })
-  return user
+  return xuser
 }
 
 export const updateUser = async (id, email, nama, tangalLahir) => {
-  const user = await prisma.user.update({
+  const xuser = await prisma.xuser.update({
     where: {
       id
     }, data: {
       email, nama, tangalLahir
     }
   })
-  return user
+  return xuser
 }
 
 export const deleteUser = async (id) => {
-  const user = await prisma.user.delete({ where: { id } })
-  return user
+  const xuser = await prisma.xuser.delete({ where: { id } })
+  return xuser
 } 
