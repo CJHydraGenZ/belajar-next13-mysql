@@ -3,7 +3,7 @@ import prisma from "./prisma";
 
 export const getAllUser = async () => {
   const xuser = await prisma.xuser.findMany({})
-  return xuser
+  return xuser.email
 }
 
 export const getUser = async (id) => {
@@ -14,23 +14,14 @@ export const getUser = async (id) => {
 }
 
 
-export const createUser = async (email, nama, tangalLahir) => {
-  const xuser = await prisma.xuser.create({
-    data: {
-      email,
-      nama,
-      tangalLahir
-    }
-  })
-  return xuser
-}
 
-export const updateUser = async (id, email, nama, tangalLahir) => {
+
+export const updateUser = async (id, email, password, role) => {
   const xuser = await prisma.xuser.update({
     where: {
       id
     }, data: {
-      email, nama, tangalLahir
+      email, password, role
     }
   })
   return xuser
