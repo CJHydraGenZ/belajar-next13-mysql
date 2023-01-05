@@ -1,3 +1,4 @@
+import prisma from "prisma/prisma"
 import { createUser } from "prisma/register"
 
 export default async function handle(req, res) {
@@ -8,8 +9,21 @@ export default async function handle(req, res) {
       }
       case 'POST': {
         const { email, password, role } = req.body
-        const user = await createUser(email, password, role)
-        return res.status(200).json(user)
+        try {
+          const EmailCheck = await prisma.xuser.findUnique({
+            where: {
+              email: email
+            }
+
+          })
+          if (EmailCheck) return res.status(201).json({ msg: 'Email Sudah Ada!' })
+
+          const user = await createUser(email, password, role)
+          return res.status(200).json(user)
+        } catch (error) {
+          return res.status(500).json({ msg: 'error code' })
+        }
+
       }
 
 

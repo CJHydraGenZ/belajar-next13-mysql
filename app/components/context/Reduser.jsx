@@ -2,7 +2,7 @@
 
 import { registerAdd } from "../func/fetcher";
 
-export const AppReducer = async (state, action) => {
+export const RegisterReducer = async (state, action) => {
   switch (action.type) {
     case "register": {
       const response = await registerAdd({
