@@ -14,8 +14,19 @@ export default function LoginBtn() {
   }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      {/* Not signed in <br /> */}
+      <div className="flex flex-col">
+        <div>
+          <p className="text-center font-semibold">or</p>
+        </div>
+        <button
+          className="bg-yellow-300 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
+          type="button"
+          onClick={() => signIn()}
+        >
+          Sign in with google
+        </button>
+      </div>
     </>
   );
 }
