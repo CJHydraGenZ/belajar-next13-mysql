@@ -5,10 +5,11 @@ import {
   useAppContext,
   useRegisterDispatch,
 } from "@/components/context/AppContext";
-
+import { useRegisterStore } from "app/store/store";
 export default function Register() {
   // const { register, dispatch } = useAppContext();
-  const dispatch = useRegisterDispatch();
+  // const dispatch = useRegisterDispatch();
+  const registerSubmit = useRegisterStore((state) => state.registerData);
   const [username, SetUserName] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
@@ -19,12 +20,18 @@ export default function Register() {
       password,
       role,
     });
-    dispatch({
-      type: "register",
+    const data = {
       email: username,
-      password: password,
-      role: role,
-    });
+      password,
+      role,
+    };
+    registerSubmit(data);
+    // dispatch({
+    //   type: "register",
+    //   email: username,
+    //   password: password,
+    //   role: role,
+    // });
   };
   return (
     <div>
