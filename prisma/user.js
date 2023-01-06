@@ -15,9 +15,9 @@ export const getAllUser = async () => {
   return xuser
 }
 
-export const getUser = async (id) => {
+export const getUser = async (email) => {
   const xuser = await prisma.xuser.findUnique({
-    where: { id }
+    where: { email }
   })
   return xuser
 }

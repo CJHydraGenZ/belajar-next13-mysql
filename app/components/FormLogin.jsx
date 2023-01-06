@@ -1,21 +1,39 @@
 "use client";
+import { getSession, signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
 import React, { useState } from "react";
 import LoginBtn from "./loginBtn";
 
 export default function FormLogin() {
+  // const { data: session } = useSession();
+  const router = useRouter();
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
   const handleLogin = async (e) => {
+    e.preventDefault();
     const data = {
-      username,
+      email: username,
       password,
     };
+    const result = await signIn("credentials", { ...data, redirect: false });
     console.log("ini data login", data);
+    console.log("result", result);
+    const session = await getSession();
+    console.log("session", session);
+    // if (!result.error) {
+    //   router.replace("/");
+    // } else {
+    //   setError(result.error);
+    // }
   };
   return (
     <div className="flex flex-row justify-center">
       <div className="w-full max-w-xs">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          {error && <p className="text-center">{error}</p>}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
