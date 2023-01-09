@@ -23,11 +23,11 @@ export default function FormLogin() {
     console.log("result", result);
     const session = await getSession();
     console.log("session", session);
-    // if (!result.error) {
-    //   router.replace("/");
-    // } else {
-    //   setError(result.error);
-    // }
+    if (!result.error) {
+      router.replace("/admin");
+    } else {
+      setError(result.error);
+    }
   };
   return (
     <div className="flex flex-row justify-center">

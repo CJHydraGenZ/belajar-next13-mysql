@@ -1,9 +1,9 @@
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 export default async function middleware(req) {
-  console.log('Middleware File', req.nextUrl);
+  // console.log('Middleware File', req.nextUrl);
   const session = await getToken({ req })
-  console.log('Middleware File session', session);
+  // console.log('Middleware File session', session);
 
   if (!session) {
     // const requestPage = req.nextUrl.pathname;

@@ -39,4 +39,31 @@ export const useUserStore = create((set, get) => ({
     }
   },
 }));
+
+export const useDataWilayah = create((set, get) => ({
+  error: {},
+  isLoading: false,
+  kacamatan: {},
+  getKecamatanData: async (params) => {
+    try {
+      const data_kecamatan = await fetcher(
+        `http://www.emsifa.com/api-wilayah-indonesia/api/districts/5101.json`,
+      );
+      set(() => ({ kecamatan: data_kecamatan }));
+    } catch (error) {
+      set(() => ({ loading: false, error: error }));
+    }
+  },
+  desa: {},
+  getDesaData: async (params = 5101040) => {
+    try {
+      const data_desa = await fetcher(
+        `http://www.emsifa.com/api-wilayah-indonesia/api/villages/${params}.json`,
+      );
+      set(() => ({ desa: data_desa }));
+    } catch (error) {
+      set(() => ({ loading: false, error: error }));
+    }
+  },
+}));
 // export default useRegisterStore;

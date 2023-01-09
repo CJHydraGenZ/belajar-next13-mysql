@@ -86,7 +86,7 @@ export const authOptions = {
       }
     },
     async jwt({ token, user, account, profile, isNewUser }) {
-      console.log('jwt', { token, account });
+      // console.log('jwt', { token, account });
       // if (user && user.id) {
       //   token.id = user.id
       // }

@@ -6,7 +6,7 @@ import { AppWrapper } from "./components/context/AppContext";
 import Login from "./login/page";
 // import { useSession } from "next-auth/react";
 // import { redirect } from "next/navigation";
-
+import { ThemeProvider } from "@material-tailwind/react";
 export default function RootLayout({ children }) {
   // const { data: session } = useSession();
   // if (!session) {
@@ -40,7 +40,9 @@ export default function RootLayout({ children }) {
           <Provider>
             {/* <Login */}
             {/* <Nav /> */}
-            {children}
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
             {/* {Layout(children)} */}
           </Provider>
         </AppWrapper>
