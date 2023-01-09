@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "./components/Nav";
 import Provider from "./provider";
 import { AppWrapper } from "./components/context/AppContext";
+import Login from "./login/page";
 // import { useSession } from "next-auth/react";
 // import { redirect } from "next/navigation";
 
@@ -17,12 +18,30 @@ export default function RootLayout({ children }) {
   //   //   </>
   //   // );
   // }
+  // function Layout({ children }) {
+  //   if (Login.getLayout) {
+  //     return Login.getLayout(children);
+  //   } else {
+  //     return (
+  //       <>
+  //         <Nav />
+  //         {children}
+  //       </>
+  //     );
+  //   }
+  // }
+  // if (Login.getLayout) {
+  //   return Login.getLayout(children);
+  // }
   return (
     <html lang="en">
       <body>
         <AppWrapper>
           <Provider>
+            {/* <Login */}
+            {/* <Nav /> */}
             {children}
+            {/* {Layout(children)} */}
           </Provider>
         </AppWrapper>
       </body>

@@ -1,5 +1,6 @@
-import FormLogin from "@/components/FormLogin";
+// import FormLogin from "@/components/FormLogin";
 import React from "react";
+import FormLogin from "../components/FormLogin";
 // import LoginBtn from "../components/loginBtn";
 
 export default function Login() {
@@ -9,3 +10,11 @@ export default function Login() {
     </>
   );
 }
+
+// Login.getLayout = function PageLayout(page) {
+//   return (
+//     <>
+//       {page}
+//     </>
+//   );
+// };

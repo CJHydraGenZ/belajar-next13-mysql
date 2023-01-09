@@ -1,11 +1,13 @@
 import prisma from "prisma/prisma"
 import { createUser } from "prisma/register"
-
+import { getToken } from "next-auth/jwt"
 export default async function handle(req, res) {
+  const secret = process.env.NEXTAUTH_SECRET
   try {
     switch (req.method) {
       case 'GET': {
-        return res.status(200).json({ data: 'ok' })
+        const token = await getToken({ req, secret })
+        return res.status(200).json({ data: 'ok', token: token })
       }
       case 'POST': {
         const { email, password, role } = req.body

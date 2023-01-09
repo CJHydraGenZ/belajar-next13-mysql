@@ -40,7 +40,7 @@ export const authOptions = {
         const { email, password } = credentials
         // console.log('ii', { email, password });
         const user = await getUser(email)
-        console.log('user', user);
+        // console.log('user', user);
         if (!user) {
           throw new Error('Something went wrong!')
         }
@@ -65,15 +65,15 @@ export const authOptions = {
 
   ],
   session: { strategy: "jwt" },
-  jwt: {
-    // maxAge: 60 * 60 * 24 * 30,
-    async encode({ secret, token }) {
-      return jwt.sign(token, secret)
-    },
-    async decode({ secret, token }) {
-      return jwt.verify(token, secret)
-    }
-  },
+  // jwt: {
+  //   // maxAge: 60 * 60 * 24 * 30,
+  //   async encode({ secret, token }) {
+  //     return jwt.sign(token, secret)
+  //   },
+  //   async decode({ secret, token }) {
+  //     return jwt.verify(token, secret)
+  //   }
+  // },
   callbacks: {
     async session({ session, user, token }) {
       // console.log('session', { session, token });
@@ -86,17 +86,17 @@ export const authOptions = {
       }
     },
     async jwt({ token, user, account, profile, isNewUser }) {
-      // console.log('jwt', { token, account });
+      console.log('jwt', { token, account });
       // if (user && user.id) {
       //   token.id = user.id
       // }
       return token
     },
-    // pages: {
-    //   signIn: '/login',
-    //   // error: '/api/auth/error',
-    //   // signOut: ''
-    // }
+    pages: {
+      signIn: '/login',
+      // error: '/api/auth/error',
+      // signOut: ''
+    }
 
 
 
