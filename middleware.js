@@ -16,5 +16,5 @@ export default async function middleware(req) {
 
 
 export const config = {
-  matcher: ['/register', '/api/register', '/admin', '/api/user/:path*']
+  matcher: ['/api/register', '/dashboard/:path*', '/api/user/:path*']
 }

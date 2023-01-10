@@ -1,6 +1,7 @@
 import { fetcher } from "@/components/func/fetcher";
 import { signOut, useSession } from "next-auth/react";
 import Dashboard from "./dashboard";
+import { useDataWilayah } from "app/store/store";
 
 export default async function AdminDashboard() {
   // const { data: session, status } = useSession();
@@ -18,14 +19,11 @@ export default async function AdminDashboard() {
   // const data_desa = await fetcher(
   //   `http://www.emsifa.com/api-wilayah-indonesia/api/villages/5101040.json`,
   // );
+  // const data_wilayah = useDataWilayah((state) => state.getDataKecamatan);
 
   return (
     <>
-      <h1>
-        "Some super secret dashboard";
-      </h1>
-      <Dashboard data_wilayah={data_kecamatan} />
-      {/* <button onClick={() => signOut()}>Sign out</button> */}
+      <Dashboard data_kecamatan={data_kecamatan} />
     </>
   );
 }

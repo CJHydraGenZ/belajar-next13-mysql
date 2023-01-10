@@ -6,7 +6,7 @@ import { AppWrapper } from "./components/context/AppContext";
 import Login from "./login/page";
 // import { useSession } from "next-auth/react";
 // import { redirect } from "next/navigation";
-import { ThemeProvider } from "@material-tailwind/react";
+// import { ThemeProvider } from "@material-tailwind/react";
 export default function RootLayout({ children }) {
   // const { data: session } = useSession();
   // if (!session) {
@@ -34,18 +34,18 @@ export default function RootLayout({ children }) {
   //   return Login.getLayout(children);
   // }
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <body>
-        <AppWrapper>
-          <Provider>
-            {/* <Login */}
-            {/* <Nav /> */}
-            <ThemeProvider>
-              {children}
-            </ThemeProvider>
-            {/* {Layout(children)} */}
-          </Provider>
-        </AppWrapper>
+        {/* <AppWrapper> */}
+        {/* <ThemeProvider> */}
+        <Provider>
+          {/* <Login */}
+          {/* <Nav /> */}
+          {children}
+          {/* {Layout(children)} */}
+        </Provider>
+        {/* </ThemeProvider> */}
+        {/* </AppWrapper> */}
       </body>
     </html>
   );

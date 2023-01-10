@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 
 import { signIn, signOut, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+import Hero from "./components/Hero";
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -23,9 +24,10 @@ export default function Home() {
   return (
     <main>
       <Nav />
+      <Hero />
       {/* <h1>{session?.user?.email}</h1> */}
       {/* <button onClick={() => signOut()}>Sign out</button> */}
-      <h1 className="text-center text-yellow-500">Home</h1>
+      {/* <h1 className="text-center text-yellow-500">Home</h1> */}
     </main>
   );
 }

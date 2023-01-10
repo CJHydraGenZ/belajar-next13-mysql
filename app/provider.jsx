@@ -1,8 +1,10 @@
 "use client";
 
 import { SessionProvider, useSession } from "next-auth/react";
+// import { ThemeProvider } from "@material-tailwind/react";
+
 import { redirect } from "next/navigation";
-import AdminDashboard from "./admin/page";
+import AdminDashboard from "./dashboard/page";
 import Nav from "./components/Nav";
 import Login from "./login/page";
 
@@ -34,6 +36,7 @@ export default function Provider({ children }) {
 
   return (
     <SessionProvider refetchOnWindowFocus={false}>
+      {/* <ThemeProvider> */}
       {/* {!session ? redirect("/login") : <Nav />} */}
       {AdminDashboard.auth
         ? (
@@ -43,6 +46,7 @@ export default function Provider({ children }) {
           </Auth>
         )
         : { children }}
+      {/* </ThemeProvider> */}
     </SessionProvider>
   );
 }
