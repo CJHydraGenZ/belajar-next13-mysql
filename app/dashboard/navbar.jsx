@@ -1,12 +1,15 @@
 "use client";
 import React from "react";
 import { signOut } from "next-auth/react";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">Simantap</a>
+        <Link href={`/dashboard`} className="btn btn-ghost normal-case text-xl">
+          Simantap
+        </Link>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">

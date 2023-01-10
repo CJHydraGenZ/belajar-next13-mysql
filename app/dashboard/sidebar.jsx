@@ -4,7 +4,7 @@ export default function Sidebar({ children }) {
   return (
     <div className="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-start p-7">
+      <div className="drawer-content flex flex-col">
         {/* <!-- Page content here --> */}
         {children}
         <label
@@ -23,7 +23,7 @@ export default function Sidebar({ children }) {
           </li>
           <div className="divider"></div>
           <li>
-            <Link href={`/dashboard/pajak`}>Pajak</Link>
+            <Link href={`/dashboard/pajak`}>Data Pajak</Link>
           </li>
           <li>
             <a>Pajak</a>
