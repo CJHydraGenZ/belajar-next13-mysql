@@ -27,7 +27,7 @@ export default function Nav() {
             }
 
             <li>
-              <Link href={`about`}>About</Link>
+              <Link href={`/about`}>About</Link>
             </li>
           </ul>
         </div>

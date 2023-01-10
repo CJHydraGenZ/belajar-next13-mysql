@@ -10,11 +10,3 @@ export default function Login() {
     </>
   );
 }
-
-// Login.getLayout = function PageLayout(page) {
-//   return (
-//     <>
-//       {page}
-//     </>
-//   );
-// };

@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
 import { signOut } from "next-auth/react";
+import React from "react";
 import Link from "next/link";
 
-export default function Navbar() {
+export default function NavbarAdmin() {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">

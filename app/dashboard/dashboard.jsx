@@ -5,7 +5,7 @@ import { signOut, useSession } from "next-auth/react";
 import React, { useState } from "react";
 // import { Option, Select } from "@material-tailwind/react";
 import { useDataWilayah } from "app/store/store";
-import Navbar from "./Navbar";
+import Navbar from "./NavbarAdmin";
 import Link from "next/link";
 import Sidebar from "./sidebar";
 export default function Dashboard({ data_kecamatan }) {
@@ -38,15 +38,6 @@ export default function Dashboard({ data_kecamatan }) {
     <>
       <h1>Ini Dashboard</h1>
       <div className="w-72">
-        {
-          /* <Select label="Pilih Wilayah">
-          {data_kecamatan?.map((d) => (
-            <Option onChange={(e) => handleChange(e)} key={d.id}>
-              {d.name}
-            </Option>
-          ))}
-        </Select> */
-        }
       </div>
     </>
   );

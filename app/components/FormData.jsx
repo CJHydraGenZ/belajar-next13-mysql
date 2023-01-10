@@ -15,7 +15,7 @@ export default function FormData({ submitData }) {
   };
 
   return (
-    <div className="">
+    <div>
       <form onSubmit={(e) => submitData(e, userData)}>
         <input id="email" type="email" onChange={(e) => onChangeHandle(e)} />
         <input id="nama" type="text" onChange={(e) => onChangeHandle(e)} />

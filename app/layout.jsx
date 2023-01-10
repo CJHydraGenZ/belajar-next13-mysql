@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
   //   return Login.getLayout(children);
   // }
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="en">
       <body>
         {/* <AppWrapper> */}
         {/* <ThemeProvider> */}

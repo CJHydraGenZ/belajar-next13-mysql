@@ -19,18 +19,6 @@ function Auth({ children }) {
   return children;
 }
 
-function Layout({ children }) {
-  if (Login.getLayout) {
-    return Login.getLayout(children);
-  } else {
-    return (
-      <>
-        <Nav />
-        {children}
-      </>
-    );
-  }
-}
 export default function Provider({ children }) {
   // const { data: session } = useSession();
 

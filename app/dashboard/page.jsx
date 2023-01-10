@@ -13,9 +13,9 @@ export default async function AdminDashboard() {
   // if (status === "unauthenticated") {
   //   return <p>Access Denied</p>;
   // }
-  const data_kecamatan = await fetcher(
-    `http://www.emsifa.com/api-wilayah-indonesia/api/districts/5101.json`,
-  );
+  // const data_kecamatan = await fetcher(
+  //   `http://www.emsifa.com/api-wilayah-indonesia/api/districts/5101.json`,
+  // );
   // const data_desa = await fetcher(
   //   `http://www.emsifa.com/api-wilayah-indonesia/api/villages/5101040.json`,
   // );
@@ -23,7 +23,7 @@ export default async function AdminDashboard() {
 
   return (
     <>
-      <Dashboard data_kecamatan={data_kecamatan} />
+      <Dashboard />
     </>
   );
 }
