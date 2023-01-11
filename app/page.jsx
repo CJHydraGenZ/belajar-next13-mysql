@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import Hero from "./components/Hero";
+import Footer from "./footer";
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,7 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
+      <Footer />
       {/* <h1>{session?.user?.email}</h1> */}
       {/* <button onClick={() => signOut()}>Sign out</button> */}
       {/* <h1 className="text-center text-yellow-500">Home</h1> */}

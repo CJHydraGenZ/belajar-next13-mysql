@@ -16,7 +16,7 @@ export default function Sidebar({ children }) {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+        <ul className="menu p-4 w-80 bg-base-100 text-base-content gap-1">
           {/* <!-- Sidebar content here --> */}
           <li>
             <Link href={`/dashboard/register`}>Tambah User</Link>
@@ -26,10 +26,7 @@ export default function Sidebar({ children }) {
             <Link href={`/dashboard/pajak`}>Data Pajak</Link>
           </li>
           <li>
-            <a>Pajak</a>
-          </li>
-          <li>
-            <a>Pajak</a>
+            <Link href={`/dashboard/data-pajak`}>Tambah Pajak</Link>
           </li>
         </ul>
       </div>

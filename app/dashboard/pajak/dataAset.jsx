@@ -4,19 +4,25 @@ const data_kab = [
   {
     jlh_aset: 1,
     jns_aset: "mobil",
-    kecamatan: "pekutatan",
+    kecamatan: "melaya",
     pajak: "in adalah pajak",
   },
   {
     jlh_aset: 1,
     jns_aset: "mobil",
-    kecamatan: "pekutatan",
+    kecamatan: "negara",
     pajak: "in adalah pajak",
   },
   {
     jlh_aset: 1,
     jns_aset: "mobil",
-    kecamatan: "pekutatan",
+    kecamatan: "jembrana",
+    pajak: "in adalah pajak",
+  },
+  {
+    jlh_aset: 1,
+    jns_aset: "mobil",
+    kecamatan: "mendoyo",
     pajak: "in adalah pajak",
   },
   {
@@ -45,7 +51,7 @@ export default function DataAset() {
               <th>{d.jlh_aset}</th>
               <td>{d.jns_aset}</td>
               <td>
-                <Link href={`/dashboard/pajak/desa`}>
+                <Link href={`/dashboard/pajak/${d.kecamatan}`}>
                   {d.kecamatan}
                 </Link>
               </td>
