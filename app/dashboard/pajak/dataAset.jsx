@@ -2,34 +2,22 @@ import Link from "next/link";
 import React from "react";
 const data_kab = [
   {
-    jlh_aset: 1,
-    jns_aset: "mobil",
+    jlh_aset: 2000,
+    jns_aset: "Hotel, Restoran, Hiburan, Reklame, Penerangan Jalan",
     kecamatan: "melaya",
-    pajak: "in adalah pajak",
+    total_pajak: 35000000,
   },
   {
-    jlh_aset: 1,
-    jns_aset: "mobil",
-    kecamatan: "negara",
-    pajak: "in adalah pajak",
-  },
-  {
-    jlh_aset: 1,
-    jns_aset: "mobil",
-    kecamatan: "jembrana",
-    pajak: "in adalah pajak",
-  },
-  {
-    jlh_aset: 1,
-    jns_aset: "mobil",
-    kecamatan: "mendoyo",
-    pajak: "in adalah pajak",
-  },
-  {
-    jlh_aset: 1,
-    jns_aset: "mobil",
+    jlh_aset: 300,
+    jns_aset: "Hiburan, Pengambilan bahan galian gol.c",
     kecamatan: "pekutatan",
-    pajak: "in adalah pajak",
+    total_pajak: 10000000,
+  },
+  {
+    jlh_aset: 456,
+    jns_aset: "Hiburan, Restoran Reklame, Penerangan jalan, Parkir",
+    kecamatan: "negara",
+    total_pajak: 5000000,
   },
 ];
 export default function DataAset() {
@@ -39,10 +27,10 @@ export default function DataAset() {
         {/* <!-- head --> */}
         <thead>
           <tr>
-            <th>Jumlah Aset</th>
-            <th>Jenis Aset</th>
+            <th>Total Jumlah Aset</th>
+            <th>Jenis-Jenis Aset</th>
             <th>Kecamatan</th>
-            <th>Pajak</th>
+            <th>Total Pajak</th>
           </tr>
         </thead>
         <tbody>
@@ -55,7 +43,7 @@ export default function DataAset() {
                   {d.kecamatan}
                 </Link>
               </td>
-              <td>{d.pajak}</td>
+              <td>{d.total_pajak}</td>
             </tr>
           ))}
         </tbody>

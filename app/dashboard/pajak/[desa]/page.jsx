@@ -6,7 +6,7 @@ export default function page({ params }) {
   return (
     <div>
       <h1>Desa : {desa}</h1>
-      <DataDesa />
+      <DataDesa params={desa} />
     </div>
   );
 }

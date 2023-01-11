@@ -41,7 +41,7 @@ export default function Register() {
             className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             htmlFor="email"
           >
-            Full Name
+            Email
           </label>
         </div>
         <div className="md:w-2/3">
@@ -93,7 +93,8 @@ export default function Register() {
           />
         </div>
       </div>
-      <div className="md:flex md:items-center mb-6">
+      {
+        /* <div className="md:flex md:items-center mb-6">
         <div className="md:w-1/3"></div>
         <label className="md:w-2/3 block text-gray-500 font-bold">
           <input className="mr-2 leading-tight" type="checkbox" />
@@ -101,7 +102,8 @@ export default function Register() {
             Send me your newsletter!
           </span>
         </label>
-      </div>
+      </div> */
+      }
       <div className="md:flex md:items-center">
         <div className="md:w-1/3"></div>
         <div className="md:w-2/3">
@@ -109,7 +111,7 @@ export default function Register() {
             className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="submit"
           >
-            Sign Up
+            Tambah User
           </button>
         </div>
       </div>

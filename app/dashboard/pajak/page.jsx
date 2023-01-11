@@ -5,7 +5,7 @@ export default function page() {
   return (
     <div>
       <h1>
-        Kabupaten
+        Data Kabupaten
       </h1>
       <DataAset />
     </div>

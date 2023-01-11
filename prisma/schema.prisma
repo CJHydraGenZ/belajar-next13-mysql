@@ -63,3 +63,12 @@ model Xuser {
   password String?
   role     String?
 }
+
+model Pajak {
+  id        String @id @default(cuid())
+  jlh_aset  Int
+  jns_aset  String
+  Pajak     Int
+  kecamatan String
+  desa      String
+}

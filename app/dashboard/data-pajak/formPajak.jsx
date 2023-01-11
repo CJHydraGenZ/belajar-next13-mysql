@@ -48,7 +48,7 @@ export default function FormPajak() {
             </label>
             <input
               type="text"
-              placeholder="text"
+              placeholder="Jenis Aset..."
               className="input input-bordered"
               // onChange={(e) => setPassword(e.target.value)}
             />
@@ -59,7 +59,7 @@ export default function FormPajak() {
             </label>
             <input
               type="text"
-              placeholder="text"
+              placeholder="Pajak..."
               className="input input-bordered"
               // onChange={(e) => setPassword(e.target.value)}
             />
@@ -104,7 +104,7 @@ export default function FormPajak() {
             {/* <span className="label-text-alt">Alt label</span> */}
           </label>
           <select className="select select-bordered">
-            <option>Pick one</option>
+            {/* <option>Pick one</option> */}
             {desa?.map((d) => <option value={d.id} key={d.id}>{d.name}
             </option>)}
             {
