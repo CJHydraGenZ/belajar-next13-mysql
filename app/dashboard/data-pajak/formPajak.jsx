@@ -1,6 +1,31 @@
-import React from "react";
+"use client";
+import useSWR from "swr";
+import { fetcher } from "@/components/func/fetcher";
+import { useDataWilayah } from "app/store/store";
+import React, { useEffect, useState } from "react";
 
 export default function FormPajak() {
+  // const { kecamatan, desa } = useDataWilayah((state) => state);
+  // const getKecamatanData = useDataWilayah((state) => state.getKecamatanData);
+  const [selectDesa, setSelectDesa] = useState("5101040");
+  const { data: kecamatan } = useSWR(
+    "http://www.emsifa.com/api-wilayah-indonesia/api/districts/5101.json",
+    fetcher,
+  );
+  const { data: desa } = useSWR(
+    `http://www.emsifa.com/api-wilayah-indonesia/api/villages/${selectDesa}.json`,
+    fetcher,
+  );
+
+  const handleChange = (e) => {
+    setSelectDesa(e.target.value);
+  };
+
+  // console.log(selectDesa);
+  // console.log(desa);
+  // if (error) return <div>failed to load</div>;
+  // if (isLoading) return <div>loading...</div>;
+  // console.log(data);
   return (
     <div className="flex flex-col lg:flex-row">
       {/* <form> */}
@@ -49,13 +74,20 @@ export default function FormPajak() {
             </span>
             {/* <span className="label-text-alt">Alt label</span> */}
           </label>
-          <select className="select select-bordered">
-            <option disabled selected>Pick one</option>
-            <option>Star Wars</option>
-            <option>Harry Potter</option>
+          <select
+            onChange={(e) => handleChange(e)}
+            value={selectDesa}
+            className="select select-bordered"
+          >
+            {kecamatan?.map((d) => (
+              <option value={d.id} key={d.id}>{d.name}</option>
+            ))}
+            {
+              /* <option>Harry Potter</option>
             <option>Lord of the Rings</option>
             <option>Planet of the Apes</option>
-            <option>Star Trek</option>
+            <option>Star Trek</option> */
+            }
           </select>
           {
             /* <label className="label">
@@ -72,12 +104,15 @@ export default function FormPajak() {
             {/* <span className="label-text-alt">Alt label</span> */}
           </label>
           <select className="select select-bordered">
-            <option disabled selected>Pick one</option>
-            <option>Star Wars</option>
-            <option>Harry Potter</option>
+            <option>Pick one</option>
+            {desa?.map((d) => <option value={d.id} key={d.id}>{d.name}
+            </option>)}
+            {
+              /* <option>Harry Potter</option>
             <option>Lord of the Rings</option>
             <option>Planet of the Apes</option>
-            <option>Star Trek</option>
+            <option>Star Trek</option> */
+            }
           </select>
           {
             /* <label className="label">
