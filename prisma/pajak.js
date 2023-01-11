@@ -23,20 +23,20 @@ import prisma from "./prisma";
 // }
 
 
-export const createpajak = async (email, password, role) => {
+// export const createpajak = async (email, password, role) => {
 
 
-  // const hash = await bcrypt.hash(password, 10);
+//   // const hash = await bcrypt.hash(password, 10);
 
-  const pajak = await prisma.pajak.create({
-    data: {
-      email,
-      password: hash,
-      role
-    }
-  })
-  return pajak
-}
+//   const pajak = await prisma.pajak.create({
+//     data: {
+//       email,
+//       password: hash,
+//       role
+//     }
+//   })
+//   return pajak
+// }
 
 
 
